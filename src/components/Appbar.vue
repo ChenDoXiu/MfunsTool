@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-21 13:42:27
- * @LastEditTime: 2021-02-24 15:44:38
+ * @LastEditTime: 2021-02-25 15:53:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \html\src\components\Appbar.vue
@@ -13,8 +13,8 @@
     </v-avatar>
     <v-app-bar-title>{{ title }}</v-app-bar-title>
     <v-spacer></v-spacer>
-        <v-btn color="success" v-bind="attrs" v-on="on" depressed rounded dark
-          ><v-icon left>mdi-github</v-icon>关于此项目</v-btn
+        <v-btn @click="toRescue('https://github.com/ChenDoXiu/MfunsTool')" color="success" v-bind="attrs" v-on="on" depressed rounded dark
+          ><v-icon left>mdi-github</v-icon>关于&帮助</v-btn
         >
   </v-app-bar>
 </template>
@@ -22,6 +22,11 @@
 <script>
 export default {
   props: ["title"],
+  methods: {
+    toRescue(url) {
+        window.open(url,"_blank");
+    }
+  }
 };
 </script>
 
